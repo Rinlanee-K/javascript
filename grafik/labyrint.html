@@ -1,0 +1,51 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    
+    function start(){
+        
+        
+        rectangle(100,0,1000,900, "black");
+        rectangle(1050,350,50,70, "red");
+    
+        rectangle(350,0,50,350, "green");
+        rectangle(520,350,50,400, "green");
+        rectangle(700,0,50,350, "green");
+    }
+
+    function hasWin(){
+         return (getPixel(mouse.x, mouse.y).red != 0)
+    }
+
+    function hasCrashed(){
+         return (getPixel(mouse.x, mouse.y).green != 0)
+    }
+
+        function update(){
+        
+   
+        if(mouse.x>100&&mouse.x<1100){
+            hideMouse();
+        } else{
+            showMouse();
+        }   
+
+    
+
+    if (hasCrashed()){
+        
+        rectangle(mouse.x, mouse.y, mouse.size, mouse.size, "green");   
+       alert("DUMB FU ING LOSER");  
+       stopUpdate();
+           
+       }
+
+    if (hasWin()){
+        
+        rectangle(mouse.x, mouse.y, mouse.size, mouse.size, "red");   
+       alert("WINNER");  
+       stopUpdate();
+           
+       }
+
+
+    }
+    </script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+   let svar;
+    do{
+        svar=prompt("Vad vill du äta 1.Pizza 2.Hamburgare 3.Varma mackor 4.Kanelbulle");
+        switch(Number(svar)){
+            case(1):
+            alert("Här kommer din Pizza...");
+            break;
+            case(2):
+            alert("Här kommer din Hamburgare...");
+            break;
+            case(3):
+            alert("Här kommer dina varma mackor...");
+            break;
+            case(4):
+            alert("Här kommer din kanelbulle...");
+            break;
+            case(0):
+            alert ("Tack för besöket i vår restaurang")
+            break;
+            default:
+                alert ("Det har vi inte på menyn")
+        }
+    }while(svar!=0);
+</script>
+</body>
+</html>

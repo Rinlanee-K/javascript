@@ -1,0 +1,27 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    function start(){
+        ball={x:0,y:0};
+        rektangel={x:0,y:700};
+        fyrkant={x:800,y:100};
+        boll={x:500,y:400};
+        rund={x:850,y:700};
+    }
+    function update(){
+        fill("black");
+        circle(ball.x,ball.y,50,"lime");
+        ball.x++;
+        ball.y++;
+        rectangle(rektangel.x,rektangel.y,30,30,"midnightBlue");
+        rektangel.x+=2;
+        rektangel.y-=1;
+        rectangle(fyrkant.x,fyrkant.y,70,55,"magenta");
+        fyrkant.x-=0,5;
+        fyrkant.y+=1;
+        circle(boll.x,boll.y,30,"red");
+        boll.x-=1;
+        boll.y+=2;
+        circle(rund.x,rund.y,40,"yellow");
+        rund.x-=1;
+        rund.y-=2;
+    }
+    </script>

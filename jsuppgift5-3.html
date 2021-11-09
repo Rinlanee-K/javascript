@@ -1,0 +1,25 @@
+<script>
+
+    function beraknaRabatt(korg){
+    if(korg<500){
+        return 0;
+    }
+    else if(korg<1000){
+        return korg*0.05;
+    }
+    else if(korg<5000){
+        return korg*0.10;
+    }
+    else if(korg<10000){
+        return korg*0.20;
+    }
+    }
+    let varde, rabatt, betala;
+      do {
+        varuKorgsVarde = Number (prompt("Ange värdet på din varukorg"));
+        rabatt = beraknaRabatt(varuKorgsVarde);
+        betala = varuKorgsVarde - rabatt;
+    alert(`Varukorgens värde var ${varuKorgsVarde} och rabatten blev ${rabatt}. Det återstår ${betala} kvar att betalas.`);
+    } while (confirm("Beräkna en till varukorg"))
+
+</script>

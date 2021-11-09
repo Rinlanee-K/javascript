@@ -1,0 +1,24 @@
+<script>
+      function laddaSida(){
+        //EN funtion som laddar en sidlängd från användaren och retunerar den till programmet
+        let input;
+        input = Number(prompt("Ange längden på en kubs sida"));
+        return; input
+    }
+    function kubVolym(sida){
+        //en funktion som tar emot kubens sidlängd som argument, beräknar volymen och retunerar det till programmet
+        return sida**3;
+    }
+    function skrivUt() {
+        //en funktion som tar emot kubens volym och skriver ut det med en alert
+        alert(`Kubens volym är ${volym} cm^3`);
+    }
+
+    let sida, volym;
+    do {
+        sida = laddaSida();
+        volym = kubVolym(sida);
+        skrivUt(volym);
+    } while (confirm("Vill du beräkna volymen av en till kub?"))
+   
+</script>

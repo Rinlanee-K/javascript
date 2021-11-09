@@ -1,0 +1,15 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    function start(){
+
+       let boll = Math.floor(Math.random()*5000)+1;
+        for(let i=0;i<boll;i++){
+           
+        let ett = Math.floor(Math.random()*255)+0;
+        let tva = Math.floor(Math.random()*255)+0;
+        let tre = Math.floor(Math.random()*255)+0;
+        let cirkel = {x:random(3000), y:random(1000), storlek:random(150), farg:mixColor(ett, tva, tre)}
+        circle(cirkel.x,cirkel.y,cirkel.storlek,cirkel.farg);
+}
+        
+    }
+    </script>

@@ -1,0 +1,78 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    //Skapar en function spindel som är Spindel
+    function Spindel(startX,startY,xSpeed,ySpeed){
+        
+        this.x = startX;
+        this.y = startY;
+        //Gör så att spindlarna åker åt olika positioner så att alla spindlar inte far åt tex höger.
+        if(random(2)==0){
+        this.xSpeed = xSpeed;
+        } else {
+        this.xSpeed = -xSpeed;
+        }
+        if(random(2)==0){
+        this.ySpeed = ySpeed;
+        } else {
+        this.ySpeed = -ySpeed;
+        }
+        
+        this.update = function(){
+         //Gör att spindlarna försvinner när de åker utanför skärmen
+         if(this.x> 0 && this.x < totalWidth && this.y > 0 && this.y < totalHeight){
+
+        //Ändrar Spindelns position
+            this.x += this.xSpeed;
+            this.y += this.ySpeed;
+          
+                
+
+            save();
+           translate(this.x,this.y);
+           
+           //Ritar spindelns utseende
+           circle(13,80,15,"black");
+           circle(0,80,10,"black");
+
+           circle(0,75,3,"red");
+           circle(0,85,3,"red");
+           
+           rectangle(21,40,3,30,"black");
+           rectangle(21,90,3,30,"black");
+           rectangle(7,40,3,30,"black");
+           rectangle(7,90,3,30,"black");
+           rectangle(0,40,3,30,"black");
+           rectangle(0,90,3,30,"black");
+           rectangle(14,40,3,30,"black");
+           rectangle(14,90,3,30,"black");
+           
+
+           restore();
+         
+        }
+        }
+    }
+    function start(){
+        //deklarera en spindel array
+        spindel = [];
+        interval = 2;
+        //Skapar 100 spindlar som stoppas in i array spindel
+            for(let i=2;i<100;i++){
+                spindel.push(new Spindel(totalWidth/2,totalHeight/2, (1+2*random(100)/-100), (1+2*random(100)/-100)));
+            }
+            
+    }
+    function update(){
+
+        clearScreen();
+        interval++;
+        //skriver ut spindlar på skärmen
+        for(let i=0;i<spindel.length;i++){
+            spindel[i].update();
+        }
+        //Interval mellan när spindlarna ska "födas".
+            if(interval%20==0){
+                spindel.push(new Spindel(totalWidth/2,totalHeight/2, (1+2*random(100)/-100), (1+2*random(100)/-100)));
+            }
+    }
+</script>
+
